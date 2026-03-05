@@ -29,9 +29,6 @@ node app.js
 
 http://localhost:3000
 
-## Deployment
-Live URL:
-https://your-deployed-link.com
 
 ## Author
 Loo Kar Jun
