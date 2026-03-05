@@ -34,4 +34,4 @@ Live URL:
 https://your-deployed-link.com
 
 ## Author
-Your Name
+Loo Kar Jun
