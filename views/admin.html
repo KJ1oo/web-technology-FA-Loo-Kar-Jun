@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Campus Lost & Found System</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .logout-btn {
+            background: #f56565;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .logout-btn:hover {
+            background: #e53e3e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🔒 Admin Panel</h1>
+                </div>
+                <nav aria-label="Main Navigation">
+                    <a href="/">🏠 Home</a>
+                    <a href="/about">📖 Lost & Found</a>
+                    <a href="/report">📝 Report</a>
+                    <a href="/admin" class="active">🔒 Admin</a>
+                    <a href="/admin/logout" class="logout-btn">🚪 Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="content-wrapper">
+                <div class="admin-header">
+                    <div>
+                        <h2>Admin Dashboard</h2>
+                        <p>Manage community registrations and data</p>
+                    </div>
+                    <div>
+                        <span>👤 Logged in as: <strong>Admin</strong></span>
+                    </div>
+                </div>
+
+                <div class="admin-panel">
+                    <h3 class="mb-3">Report Management</h3>
+                    
+                    <div class="button-group">
+                        <button id="load" class="btn btn-primary">Load All Records</button>
+                        <button id="clear" class="btn btn-danger">Clear All Data</button>
+                    </div>
+
+                    <div id="stats" class="mb-3">
+                        <p>Total Item Reports: <span id="count">0</span></p>
+                    </div>
+
+                    <div id="message"></div>
+
+                    <div class="table-responsive">
+                        <table class="user-table" id="userTable" style="display: none;">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
+                                    <th>Location</th>
+                                    <th>Date</th>
+                                    <th>Contact Information</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="list"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; Campus Lost & Found System - Admin Panel</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/js/admin.js"></script>
+</body>
+</html>

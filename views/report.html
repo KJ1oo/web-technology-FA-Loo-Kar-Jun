@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report - Campus Lost & Found System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+ <div class="container">
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <h1>     Campus Lost & Found System</h1>
+        </div>
+        <nav aria-label="Main Navigation">
+          <a href="/">🏠 Home</a>
+          <a href="/about">📖 Lost & Found</a>
+          <a href="/report" class="active">📝 Report</a>
+          <a href="/admin/login">🔒 Admin</a>
+        </nav>
+      </div>
+    </header>
+
+<main>
+  <div class="content-wrapper">
+    <h2 class="text-center mb-4">Campus Lost & Found Item Report</h2>
+    <p class="text-center text-muted mb-4">
+      Submit a report for a lost or found item on campus
+    </p>
+
+    <div class="form-container">
+      <form id="itemForm" action="/api/items" method="POST">
+
+        <!-- Title -->
+        <div class="form-group">
+          <label for="title">Item Title *</label>
+          <input type="text" id="title" name="title" 
+                 class="form-control"
+                 placeholder="E.g. Black Wallet, Student ID Card"
+                 required>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label for="description">Description *</label>
+          <textarea id="description" name="description"
+                    class="form-control"
+                    placeholder="Provide detailed description of the item"
+                    required></textarea>
+        </div>
+
+        <!-- Category Dropdown -->
+        <div class="form-group">
+          <label for="category">Category *</label>
+          <select id="category" name="category" 
+                  class="form-control" required>
+            <option value="">-- Select Category --</option>
+            <option value="Lost">Lost</option>
+            <option value="Found">Found</option>
+          </select>
+        </div>
+
+        <!-- Location -->
+        <div class="form-group">
+          <label for="location">Location *</label>
+          <input type="text" id="location" name="location"
+                 class="form-control"
+                 placeholder="Where was it lost/found?"
+                 required>
+        </div>
+
+        <!-- Date -->
+        <div class="form-group">
+          <label for="date">Date *</label>
+          <input type="date" id="date" name="date"
+                 class="form-control"
+                 required>
+        </div>
+
+       <!-- Contact Information -->
+        <div class="form-group">
+          <label for="contact">Email Address *</label>
+          <input type="email" 
+                id="contact" 
+                name="contact"
+                class="form-control"
+                placeholder="example@email.com"
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                title="Please enter a valid email address (e.g., example@email.com)">
+        </div>
+
+        <!-- Status -->
+        <div class="form-group">
+          <label for="status">Status *</label>
+          <select id="status" name="status"
+                  class="form-control" required>
+            <option value="Active" selected>Active</option>
+            <option value="Claimed">Claimed</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">
+          Submit Item Report
+        </button>
+
+        <div id="feedback" class="mt-3"></div>
+      </form>
+    </div>
+  </div>
+</main>
+
+
+<footer>
+      <div class="footer-content">
+        <p>&copy; 2026 Campus Lost & Found System</p>
+      </div>
+</footer>
+
+<script src="/js/form.js"></script>
+</body>
+</html>
